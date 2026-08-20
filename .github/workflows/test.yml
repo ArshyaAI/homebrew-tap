@@ -1,0 +1,25 @@
+name: Formula
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    name: Install and self-test
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Validate formula syntax
+        run: ruby -c Formula/runnel.rb
+      - name: Install exact release through Homebrew
+        run: brew install --formula ./Formula/runnel.rb
+      - name: Verify installed binary
+        run: |
+          runnel version
+          runnel doctor --self-test
+          brew test runnel
