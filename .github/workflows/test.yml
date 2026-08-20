@@ -16,8 +16,10 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Validate formula syntax
         run: ruby -c Formula/runnel.rb
+      - name: Register this checkout as the tap
+        run: brew tap ArshyaAI/tap "$GITHUB_WORKSPACE"
       - name: Install exact release through Homebrew
-        run: brew install --formula ./Formula/runnel.rb
+        run: brew install ArshyaAI/tap/runnel
       - name: Verify installed binary
         run: |
           runnel version

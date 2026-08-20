@@ -10,7 +10,7 @@ Distribution repository for the checksum-pinned Runnel Homebrew formula.
 ## Commands
 
 - Syntax: `ruby -c Formula/runnel.rb`
-- Install smoke: `brew install --formula ./Formula/runnel.rb`
+- Local tap smoke: `brew tap ArshyaAI/tap "$PWD" && brew install ArshyaAI/tap/runnel`
 - Formula test: `brew test runnel`
 
 ## Architecture
