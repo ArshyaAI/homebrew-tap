@@ -6,8 +6,8 @@
 
 ## In progress
 
-- [ ] Publish and verify the Runnel v0.1.0 tap.
+- [ ] Verify the Runnel v0.1.1 public tap CI.
 
 ## Done
 
-- [x] Pin the v0.1.0 Apple Silicon and Intel release digests.
+- [x] Pin the v0.1.1 Apple Silicon and Intel release digests.
